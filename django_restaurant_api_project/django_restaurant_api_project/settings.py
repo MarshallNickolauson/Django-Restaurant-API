@@ -22,9 +22,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'menu_app.apps.MenuAppConfig',
     'rest_framework',
     'rest_framework.authtoken',
-    'menu_app.apps.MenuAppConfig',
+    'djoser'
 ]
 
 MIDDLEWARE = [
@@ -119,7 +120,15 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.AnonRateThrottle',
         'rest_framework.throttling.UserRateThrottle',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication'  
+    ],
     'DEFAULT_THROTTLE_RATES': {
         'anon': '10/second',
+        'user': '10/second',
     },
+}
+
+DJOSER = {
+    "USER_ID_FIELD": "username"
 }
