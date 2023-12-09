@@ -11,4 +11,6 @@ urlpatterns = [
     path('ingredient/<int:pk>', views.IngredientViewSet.as_view({'get':'retrieve', 'post':'create', 'update':'update', 'delete':'destroy'})),
     path('menu-item-ingredients', views.MenuItemIngredientViewSet.as_view({'get':'list', 'post':'create', 'update':'update'})),
     path('menu-item-ingredient/<int:pk>', views.MenuItemIngredientViewSet.as_view({'get':'retrieve', 'post':'create', 'update':'update', 'delete':'destroy'})),
+    
+    path('secret', views.secret)
 ]
