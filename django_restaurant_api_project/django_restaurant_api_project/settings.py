@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
-    'rest_framework_simplejwt'
 ]
 
 MIDDLEWARE = [
@@ -123,7 +122,6 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.UserRateThrottle',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_THROTTLE_RATES': {
@@ -134,8 +132,4 @@ REST_FRAMEWORK = {
 
 DJOSER = {
     "USER_ID_FIELD": "username"
-}
-
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(seconds=10),
 }
